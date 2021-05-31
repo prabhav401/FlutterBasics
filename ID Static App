@@ -1,0 +1,173 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+void main() => runApp(MaterialApp(
+  home: Test(),
+));
+
+class Test extends StatefulWidget {
+  @override
+  _TestState createState() => _TestState();
+}
+
+class _TestState extends State<Test> {
+
+  int age = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey[900],
+     appBar: AppBar(
+       title: Text(
+           "Amazon ID Card",
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.italic,
+              fontSize: 22.50,
+            ),
+          ),
+       elevation: 80.0,
+       centerTitle: true,
+       backgroundColor: Colors.amber,
+     ),
+
+      body: Padding(
+        padding: EdgeInsets.all(30.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0,15.0,0,0),
+              child: Center(
+                child:
+                CircleAvatar(
+                  backgroundImage: AssetImage('images/pfp.jpg'),
+                  radius: 70.0,
+                ),
+              ),
+            ),
+            Divider(
+              height: 60.0,
+              color: Colors.grey[500],
+            ),
+            Text(
+                "NAME",
+            style: TextStyle(
+              fontSize: 16.5,
+              color: Colors.grey[400],
+              fontWeight: FontWeight.bold,
+            ),
+            ),
+            SizedBox(height:5.0),
+            Text(
+              "PRABHAV SRIVASTAVA",
+              style: TextStyle(
+                color: Colors.amber,
+                fontSize: 19.0,
+              ),
+            ),
+            SizedBox(height:30.0),
+            Text(
+              "POSITION",
+              style: TextStyle(
+                fontSize: 16.5,
+                color: Colors.grey[400],
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height:5.0),
+            Text(
+              "SDE-I ENGINEER",
+              style: TextStyle(
+                color: Colors.amber,
+                fontSize: 19.0,
+              ),
+            ),
+            SizedBox(height: 30.0),
+            Text(
+              "LANGUAGE",
+              style: TextStyle(
+                fontSize: 16.5,
+                color: Colors.grey[400],
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height:5.0),
+            Text(
+              "C++  Python  Flutter(Dart)",
+              style: TextStyle(
+                color: Colors.amber,
+                fontSize: 19.0,
+              ),
+            ),
+            SizedBox(height:30.0),
+            Text(
+              "EDUCATION",
+              style: TextStyle(
+                fontSize: 16.5,
+                color: Colors.grey[400],
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height:5.0),
+            Text(
+              "ICSE 10th : 91.4%\nCBSE 12th : 90.25%\nB.TECH CSE : 96.67%",
+              style: TextStyle(
+                height: 1.50,
+                color: Colors.amber,
+                fontSize: 19.0,
+              ),
+            ),
+            Divider(
+              height: 60.0,
+              color: Colors.grey[500],
+            ),
+            Row(
+                children: <Widget>[
+                RaisedButton.icon(onPressed: () {}, icon: Icon(Icons.email_outlined,), label: Text("ps2980@srmist.edu.in"),),
+                SizedBox(width: 18.0),
+                RaisedButton.icon(onPressed: () {}, icon: Icon(Icons.phone_android,), label: Text("+91 6379057721"),),
+              ],
+            ),
+            SizedBox(height: 30.0),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  'Pressed Button $age many times.',
+                  style: TextStyle(
+                    color: Colors.amber,
+                    fontStyle: FontStyle.italic,
+                    fontSize: 19.0,
+                  ),
+                ),
+                SizedBox(width: 53.0),
+                RaisedButton.icon(
+                    onPressed: () {
+                      setState(() {
+                        age += 1;
+                      });
+                    }, icon: Icon(
+                  Icons.add_box_outlined,
+                  color: Colors.amber,
+                ),
+                  color: Colors.grey[800],
+                    label: Text(
+                        "Click",
+                        style : TextStyle(
+                        color: Colors.amber,
+                      ),
+                    ),
+                )
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
